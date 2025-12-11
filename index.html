@@ -14,7 +14,7 @@
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               display: ['Outfit', 'sans-serif'],
-              mono: ['"Courier New"', 'Courier', 'monospace'], // Added for terminal look
+              mono: ['"Courier New"', 'Courier', 'monospace'],
             },
             colors: {
               glass: {
@@ -32,11 +32,11 @@
               'float': 'float 8s ease-in-out infinite',
               'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'spin-slow': 'spin 15s linear infinite',
-              'spin-reverse': 'spin-reverse 10s linear infinite', // Added
+              'spin-reverse': 'spin-reverse 10s linear infinite',
               'spotlight': 'spotlight 2s ease .75s 1 forwards',
               'infinite-scroll': 'infinite-scroll 25s linear infinite',
               'gradient-x': 'gradient-x 3s ease infinite',
-              'scanline': 'scanline 4s linear infinite', // Added
+              'scanline': 'scanline 4s linear infinite',
               'bounce-slow': 'bounce 3s infinite',
             },
             keyframes: {
@@ -77,12 +77,11 @@
     </script>
     <style>
       :root {
-        --bg-gradient-start: #020617; /* Slate 950 */
-        --bg-gradient-end: #0f172a;   /* Slate 900 */
+        --bg-gradient-start: #020617;
+        --bg-gradient-end: #0f172a;
         --text-primary: #f8fafc;
         --text-secondary: #94a3b8;
         
-        /* Premium Glass Settings */
         --glass-bg: rgba(15, 23, 42, 0.6);
         --glass-border: rgba(255, 255, 255, 0.08);
         --glass-highlight: rgba(255, 255, 255, 0.1);
@@ -93,10 +92,9 @@
         --bg-secondary: #0f172a;
         --input-bg: #1e293b;
         
-        --primary: #3b82f6; /* Blue 500 */
+        --primary: #3b82f6;
         --primary-fg: #ffffff;
 
-        /* Scrollbar Variables */
         --scrollbar-width: 8px;
         --scrollbar-track: #020617;
         --scrollbar-thumb: #334155;
@@ -119,7 +117,7 @@
         --bg-secondary: #f1f5f9;
         --input-bg: #ffffff;
         
-        --primary: #2563eb; /* Blue 600 */
+        --primary: #2563eb;
         --primary-fg: #ffffff;
         
         --scrollbar-track: #f1f5f9;
@@ -141,7 +139,6 @@
         font-family: 'Outfit', sans-serif;
       }
       
-      /* Refined Scrollbar */
       html {
         scrollbar-width: thin;
         scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
@@ -184,7 +181,6 @@
         background-image: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
       }
 
-      /* Utility to hide elements */
       .badge:empty, .tag:empty, .pill:empty {
         display: none !important;
       }
@@ -200,14 +196,13 @@
         }
       }
 
-      /* Glitch Effect for Preloader */
       .glitch-text {
         position: relative;
         color: white;
       }
       .glitch-text::before,
       .glitch-text::after {
-        content: attr(children); /* This requires React handling or JS, so simplifying: */
+        content: attr(children); 
         position: absolute;
         top: 0;
         left: 0;
@@ -246,13 +241,13 @@
 <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.1/",
     "react": "https://esm.sh/react@^19.2.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "vite": "https://esm.sh/vite@^7.2.7",
     "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "react/": "https://esm.sh/react@^19.2.1/",
     "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "vite": "https://esm.sh/vite@^7.2.7",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
