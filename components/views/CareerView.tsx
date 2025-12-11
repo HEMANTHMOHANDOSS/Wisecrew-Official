@@ -14,6 +14,24 @@ interface ViewProps {
   onBack: () => void;
 }
 
+interface TimelineStep {
+  step: string;
+  date: string;
+  done: boolean;
+  current?: boolean;
+  failed?: boolean;
+}
+
+interface ApplicationData {
+  id: string;
+  role: string;
+  company: string;
+  date: string;
+  status: string;
+  progress: number;
+  timeline: TimelineStep[];
+}
+
 // --- Mock Data ---
 const JOBS = [
   { id: 1, role: 'Senior React Developer', type: 'Full Time', loc: 'Remote', salary: '$80k - $120k', company: 'Wisecrew Solutions', match: 95, posted: '2d ago', tags: ['React', 'TypeScript', 'Redux'], logo: 'W', description: "We are looking for a Senior React Developer to lead our frontend initiatives. You will be responsible for architecting scalable UI components and mentoring junior developers." },
@@ -23,7 +41,7 @@ const JOBS = [
   { id: 5, role: 'Marketing Specialist', type: 'Full Time', loc: 'Chennai', salary: '$40k - $60k', company: 'Wisecrew Marketing', match: 60, posted: '3d ago', tags: ['SEO', 'Content', 'Social'], logo: 'M', description: "Drive our digital presence. You will manage social media campaigns and SEO strategies to boost brand visibility." },
 ];
 
-const APPLICATIONS = [
+const APPLICATIONS: ApplicationData[] = [
   { 
     id: 'APP-001', role: 'Frontend Developer', company: 'Wisecrew Solutions', date: 'Oct 15, 2025', 
     status: 'Interview', progress: 60,
@@ -47,8 +65,8 @@ const APPLICATIONS = [
 ];
 
 const TESTS = [
-  { id: 1, title: "Frontend Skill Assessment", duration: "60 Mins", questions: 30, status: "Pending", dueDate: "Oct 24, 2025" },
-  { id: 2, title: "Cognitive Aptitude Test", duration: "45 Mins", questions: 40, status: "Completed", score: "85%" },
+  { id: 1, title: "Frontend Skill Assessment", duration: "60 Mins", questions: 30, status: "Pending", dueDate: "Oct 24, 2025", score: "" },
+  { id: 2, title: "Cognitive Aptitude Test", duration: "45 Mins", questions: 40, status: "Completed", score: "85%", dueDate: "" },
 ];
 
 // --- AI Recruiter Bot Component ---
@@ -431,7 +449,7 @@ const CareerView: React.FC<ViewProps> = ({ onBack }) => {
                    <h4 className="font-bold text-[var(--text-primary)] mb-1 group-hover:text-amber-500 transition-colors">{job.role}</h4>
                    <p className="text-xs text-[var(--text-secondary)] mb-4">{job.company}</p>
                    <div className="flex flex-wrap gap-2 mb-4">
-                      {job.tags.slice(0,2).map(t => <span key={t} className="text-[10px] px-2 py-1 bg-[var(--bg-secondary)] rounded text-[var(--text-secondary)]">{t}</span>)}
+                      {job.tags.slice(0,2).map(t => <span key={t} className="text-[10px] px-2 py-1 bg-[var(--bg-secondary)] rounded text-[var(--text-secondary)] border border-[var(--glass-border)]">{t}</span>)}
                    </div>
                    <div className="mt-auto pt-4 border-t border-[var(--glass-border)] flex justify-between items-center">
                       <span className="text-xs font-bold text-[var(--text-primary)]">{job.salary}</span>

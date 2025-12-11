@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Sectors from './components/Sectors';
 import Services from './components/Services';
 import Internships from './components/Internships';
 import Roadmap from './components/Roadmap';
@@ -25,6 +26,7 @@ import CyberPreloader from './components/ui/CyberPreloader';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import BranchDetails from './components/BranchDetails';
 import PhoneShowcase from './components/PhoneShowcase';
+import Appointment from './components/Appointment';
 
 // Views
 import AcademyView from './components/views/AcademyView';
@@ -135,12 +137,14 @@ function App() {
         return (
           <>
              <Hero onApply={handleApply} />
+             <Sectors />
              <div id="ecosystem" className="py-20">
                 <Ecosystem onNavigate={handleNavigate} />
              </div>
              <BranchDetails />
              <Milestones />
              <PhoneShowcase />
+             <Appointment onApply={handleApply} />
              <CEOSection />
              <ContactFooter />
           </>
